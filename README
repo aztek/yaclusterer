@@ -1,0 +1,20 @@
+Кластеризатор Яндекс.Карт.
+
+Объединяет близко стоящие метки на карте в кластеры, позволяя тем самым
+выводить на карту сразу много (несколько сотен) меток без тормозов.
+
+Этот скрипт изначально был разработан для сайта http://wifi4free.ru.
+За основу был взят код кластерера для Google.Maps (http://gmaps-utility-library-dev.googlecode.com/svn/tags/markerclusterer/1.0/docs/reference.html).
+Впервые скрипт опубликован был на сайте http://vremenno.net.
+Пример использования находится в файле usage.html.
+
+
+Clusterer for Yandex.Maps.
+
+Groups neighbour placemarks on the map, thus allowing to display many
+placemarks (several hundred) at once without freezing.
+
+This script was originally developed for http://wifi4free.ru and was
+inspired by it's Google.Maps analog (http://gmaps-utility-library-dev.googlecode.com/svn/tags/markerclusterer/1.0/docs/reference.html).
+It was firstly announced at http://vremenno.net.
+See usage.html for an example.
