@@ -461,18 +461,18 @@ function Cluster(placemarkClusterer) {
 }
 
 YMaps.ClusterPlacemark = function(point, count, style, padding) {
-	var self = this;
+    var self = this;
     
     var $ = YMaps.jQuery;
     
     this.placemark = new YMaps.Placemark(point, style);
-	
-	this.onAddToMap = function(map, parentContainer) {
+    
+    this.onAddToMap = function(map, parentContainer) {
         self.setCount(count);
         
         YMaps.Events.observe(self.placemark, self.placemark.Events.Click, function () {
             var pos = map.converter.coordinatesToMapPixels(point);
-		  
+          
             var sw = new YMaps.Point(pos.x - padding, pos.y + padding);
             sw = map.converter.mapPixelsToCoordinates(sw);
           
@@ -484,11 +484,11 @@ YMaps.ClusterPlacemark = function(point, count, style, padding) {
         });
 
         map.addOverlay(self.placemark);
-	};
+    };
     
     this.setCount = function(count) {
-		self.placemark.setIconContent(count);
-	};
+        self.placemark.setIconContent(count);
+    };
     
     var methods = ["onMapUpdate", "onRemoveFromMap", "show", "hide", "isHidden"];
     $.map(methods, function (method) {
@@ -499,21 +499,21 @@ YMaps.ClusterPlacemark = function(point, count, style, padding) {
 };
 
 YMaps.Placemark.prototype.show = function() {
-	if (this._$iconContainer) { // dirty hacking...
-		this._$iconContainer.css("display", "");
-	}
+    if (this._$iconContainer) { // dirty hacking...
+        this._$iconContainer.css("display", "");
+    }
 };
 
 YMaps.Placemark.prototype.hide = function() {
-	if (this._$iconContainer) { // dirty hacking...
-		this._$iconContainer.css("display", "none");
-	}
+    if (this._$iconContainer) { // dirty hacking...
+        this._$iconContainer.css("display", "none");
+    }
 };
 
 YMaps.Placemark.prototype.isHidden = function() {
-	if (this._$iconContainer) {
-		return this._$iconContainer.css("display") == "none";
-	} else{
-		return true;
-	}
+    if (this._$iconContainer) {
+        return this._$iconContainer.css("display") == "none";
+    } else{
+        return true;
+    }
 };
